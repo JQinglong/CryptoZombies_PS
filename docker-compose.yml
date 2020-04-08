@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  truffle:
+    build: 
+      context: ./trufflebox/
+      dockerfile: Dockerfile
+    volumes:
+      - ./trufflebox:/usr/src/app
+    command: sh -c "npm run dev"
+    ports:
+      - "8003:3000"
